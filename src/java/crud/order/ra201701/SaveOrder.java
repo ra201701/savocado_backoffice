@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package crud.product.ra201701;
+package crud.order.ra201701;
 
-import crud.dao.ProductDao;
-import crud.model.Product;
+import crud.dao.OrderDao;
+import crud.model.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author edgarrenderos
  */
-@WebServlet("/SaveProduct")
-public class SaveProduct extends HttpServlet{
+@WebServlet("/SaveOrder")
+public class SaveOrder extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,23 +31,21 @@ public class SaveProduct extends HttpServlet{
         PrintWriter out = resp.getWriter();
         
         String name = req.getParameter("name");
-        String priceStr = req.getParameter("price");
-        String stockStr = req.getParameter("stock");
-        String dateAdded = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        String totalStr = req.getParameter("total");
+        String dateOrdered = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
         
-        double price = Double.parseDouble(priceStr);
-        int stock = Integer.parseInt(stockStr);
+        double total = Double.parseDouble(totalStr);
         
-        Product p = new Product();
-        p.setName(name);
-        p.setPrice(price);
-        p.setStock(stock);
-        p.setDateadded(dateAdded);
-        int status = ProductDao.save(p);
+        Order o = new Order();
+        o.setName(name);
+        o.setTotal(total);
+        o.setDateordered(dateOrdered);
+        
+        int status = OrderDao.save(o);
         if(status > 0){
             out.print("<p style='color: red;'>Se guardo correctamente</p>");
-            req.setAttribute("refListProduct", "ViewProduct");
-            req.getRequestDispatcher("product/index.jsp").include(req, resp);
+            req.setAttribute("refListOrder", "ViewOrder");
+            req.getRequestDispatcher("order/index.jsp").include(req, resp);
         } else {
             out.println("No se pudo guardar");
         }

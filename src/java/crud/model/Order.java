@@ -10,13 +10,13 @@ package crud.model;
  * @author edgarrenderos
  */
 public class Order {
-    private long id;
+    private int id;
     private String name;
     private double total;
     private String dateordered;
 
-    public long getID() { return id; }
-    public void setID(long value) { this.id = value; }
+    public int getID() { return id; }
+    public void setID(int value) { this.id = value; }
 
     public String getName() { return name; }
     public void setName(String value) { this.name = value; }

@@ -14,14 +14,15 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <title>Inicio</title>
     </head>
-    <body style="background-color:#51b86a">
+    <body style="background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b);">
     <center>
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="col-md-6">
                     <div style="height: 30px"></div>
                     <h3 class="text-center text-light">SAVOCADO SYSTEM</h3>
-                    <img src="images/logo_centrado.png" width="60%"/>
+                    <img src="images/logo_cent.png" width="40%"/>
                     <br>
                     <a href="ViewEmployee" class="btn btn-lg btn-warning text-light">Ingresar al sistema</a>
                 </div>

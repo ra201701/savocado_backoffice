@@ -156,7 +156,7 @@ a svg{
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">Empleados</a>
   <a href="ViewProduct">Productos</a>
-  <a href="ViewOrden">Ordenes</a>
+  <a href="ViewOrder">Ordenes</a>
 </div>
  
 <nav class="topnav">
